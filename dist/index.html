@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="../src/templates/sidenavbar.js"></script>
+    <script src="../src/templates/header.js"></script>
+    <script src="../src/templates/footer.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    
+    <!-- side bar menu -->
+    <div id="sidenav-container"></div>
+    
+    <div class="lg:ml-[70px] flex-col mt-[50px]">    
+        <div id="header-container"></div>
+        
+        <main class="w-auto rounded-md bg-gray-10 dark:bg-black" >
+            
+            <!-- hero section -->
+            <section class="w-full mt-12 md:mt-12 dark:bg-black">
+                <div class="relative overflow-hidden rounded-md max-h-[600px]">
+                    <div class="carousel">
+                        <div class="carousel-item">
+                            <img src="../assets/index.html/image.png" alt="Slide 1" class="w-full min-h-full">
+                            <div class="flex-col carousel-content">
+                                <h1 class=" text-[5vw] text-left mb-[2vw] "> Welcome to</h1>
+                                <h1 class=" text-[5vw] text-left mb-[1vw]  leading-none">  Sri Lanka Railways</h1>
+                                <p class="text-[2vw] text-left mb-[1vw]"> Online Train Ticket Reservation</p>
+                                <button class="button text-[2vw] hover:text-sky-400 "
+                                        onclick="window.location.href = 'main_form.html';">Reserve a Seat</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/index.html/image1.png" alt="Slide 2" class="w-full min-h-full">
+                            <div class="flex-col carousel-content">
+                                <h1 class=" text-[5vw] text-left mb-[2vw] "> Welcome to</h1>
+                                <h1 class=" text-[5vw] text-left mb-[1vw]  leading-none">  Sri Lanka Railways</h1>
+                                <p class="text-[2vw] text-left mb-[1vw]"> Online Train Ticket Reservation</p>
+                                <button class="button text-[2vw] hover:text-sky-400"
+                                        onclick="window.location.href = 'main_form.html';">Reserve a Seat</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/index.html/image2.png" alt="Slide 3" class="w-full min-h-full">
+                            <div class="flex-col carousel-content">
+                                <h1 class=" text-[5vw] text-left mb-[2vw] "> Welcome to</h1>
+                                <h1 class=" text-[5vw] text-left mb-[1vw]  leading-none">  Sri Lanka Railways</h1>
+                                <p class="text-[2vw] text-left mb-[1vw]"> Online Train Ticket Reservation</p>
+                                <button class="button text-[2vw] hover:text-sky-400"
+                                        onclick="window.location.href = 'main_form.html';">Reserve a Seat</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/index.html/Podi-Manike.jpg" alt="Slide 3" class="w-full min-h-full">
+                            <div class="flex-col carousel-content">
+                                <h1 class=" text-[5vw] text-left mb-[2vw] "> Welcome to</h1>
+                                <h1 class=" text-[5vw] text-left mb-[1vw]  leading-none">  Sri Lanka Railways</h1>
+                                <p class="text-[2vw] text-left mb-[1vw]"> Online Train Ticket Reservation</p>
+                                <button class="button text-[2vw] hover:text-sky-400"
+                                        onclick="window.location.href = 'main_form.html';">Reserve a Seat</button>
+                            </div>
+                        </div>
+                    </div>
+                            <button id="prev" class="absolute p-1 text-white transform -translate-y-1/2 rounded-lg left-[2vw] top-1/2 hover:bg-sky-300/20 hover:text-sky-400">
+                                <i class='text-4xl bx bx-chevron-left'></i>
+                            </button>
+                            
+                            <button id="next" class="absolute p-1 text-white transform -translate-y-1/2 rounded-lg top-1/2 hover:bg-sky-300/20 hover:text-sky-400 right-[2vw]">
+                                <i class='text-4xl bx bx-chevron-right '></i>
+                            </button>
+                </div>
+            </section>
+            
+            <!-- quick form -->
+            <section class="w-full mt-16 md:mt-20 px-[2vw] md:px-[5vw]">
+                <div class="flex flex-col items-center justify-between md:flex-row">
+                    <div class="w-full md:w-[40%] dark:text-white">
+                        <h1 class="text-3xl text-center sm:text-[45px] md:text-left md:text-[3vw]">Reserve your seat now.</h1>
+                        <p class="md:text-[1.5vw] md:text-left mb-[2vw] text-center text-lg mt-6 ">Reserve your seat in a few simple steps.</p>
+                        <div class="flex justify-center w-full max-md:py-4 md:justify-start">
+                        <a href="../dist/main_form.html" >
+                            <button  class="text-[3vw] px-10 py-3 md:ml-4 ml-10 text-xl text-white bg-black rounded-full hover:bg-sky-700 hover:shadow-2xl dark:bg-sky-700 dark:text-white hover:dark:text-black hover:dark:bg-white">Reserve now</button>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-[50%]">
+                        <img src="../assets/index.html/quickreservation.jpeg" alt="Quick Reservation" class="w-full">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- trains -->
+            <section class="w-full h-full p-2 antialiased text-gray-400 dark:bg-black font-inter">
+                <div class="container mx-auto">
+                <div>
+                    <div id="title" class="my-10 text-center">
+                    <!-- <h1 class="text-4xl font-bold text-white">Here are our trains.</h1> -->
+                    <p class="text-6xl tracking-wider text-gray-600 text-light dark:text-white">
+                        Our trains
+                    </div>
+                    <div
+                    class="grid grid-cols-1 gap-10 pt-10 md:grid-cols-2 lg:grid-cols-3 justify-evenly"
+                    >
+                    <div
+                        id="plan"
+                        class="w-full overflow-hidden text-center transition duration-200 ease-in transform rounded-lg hover:shadow-2xl hover:scale-105"
+                    >
+                        <div id="title" class="w-full py-5 border-b">
+                        <h3 class="mt-2 text-2xl font-normal text-sky-500">
+                        ELLA ODYSSEY
+                        </h3>
+                        </div>
+                        <div id="content" class="">
+                        <div id="icon" class="my-5">
+                            <img src="../assets/index.html/EllaOdyssey.jpg" alt="train image">
+                        </div>
+                        <div id="contain" class="mb-10 text-lg leading-8 text-gray-400">
+                            <ul class="text-gray-700 dark:text-white">
+                            <li class="font-medium tracking-widest">Intercity Express</li>
+                            <li>1<sup>st</sup> class, 2<sup>nd</sup> class, 3<sup>rd</sup> class</li>
+                            <li>Colombo Fort - Ella</li>
+                            </ul>
+                            <div id="choose" class="w-full px-6 mt-10">
+                            <a
+                                href="../dist/main_form.html"
+                                class="block w-full py-4 text-xl font-medium transition duration-200 ease-in-out bg-gray-900 rounded-xl hover:shadow-lg hover:bg-sky-600 hover:text-white "
+                                >Reaserve a Seat</a
+                            >
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div
+                        id="plan"
+                        class="w-full overflow-hidden text-center transition duration-200 ease-in transform rounded-lg hover:shadow-2xl hover:scale-105"
+                    >
+                        <div id="title" class="w-full py-5 border-b">
+                        <h3 class="mt-2 text-2xl font-normal text-sky-500">
+                            RUHUNU KUMARI
+                        </h3>
+                        </div>
+                        <div id="content" class="">
+                        <div id="icon" class="mt-5 my-[28px]">
+                            <img src="../assets/index.html/ruhunu kumari.png" alt="train image">
+                        </div>
+                        <div id="contain" class="mb-10 text-lg leading-8 text-gray-400">
+                            <ul class="text-gray-700 dark:text-white">
+                            <li class="font-medium">Intercity Express</li>
+                            <li>2<sup>nd</sup> class, 3<sup>rd</sup> class</li>
+                            <li>Colombo Fort - Matara</li>
+                            </ul>
+                            <div id="choose" class="w-full px-6 mt-10">
+                            <a
+                                href="../dist/main_form.html"
+                                class="block w-full py-4 text-xl font-medium transition duration-200 ease-in-out bg-gray-900 rounded-xl hover:shadow-lg hover:bg-sky-600 hover:text-white"
+                                >Reaserve a Seat</a
+                            >
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div
+                        id="plan"
+                        class="w-full overflow-hidden text-center transition duration-200 ease-in transform rounded-lg hover:shadow-2xl hover:scale-105"
+                    >
+                        <div id="title" class="w-full py-5 border-b ">
+                        <h3 class="mt-2 text-2xl font-normal text-sky-500">
+                            PODI MANIKE
+                        </h3>
+                        </div>
+                        <div id="content" class="">
+                        <div id="icon" class="my-5">
+                            <img src="../assets/index.html/Podi-Manike.jpg" alt="train image">
+                        </div>
+                        <div id="contain" class="mb-10 text-lg leading-8 text-gray-400">
+                            <ul class="text-gray-700 dark:text-white">
+                            <li class="font-medium">Intercity Express</li>
+                            <li>1<sup>st</sup> class, 2<sup>nd</sup> class, 3<sup>rd</sup> class</li>
+                            <li>Colombo Fort - Badulla</li>
+                            </ul>
+                            <div id="choose" class="w-full px-6 mt-10">
+                            <a
+                                href="../dist/main_form.html"
+                                class="block w-full py-4 text-xl font-medium transition duration-200 ease-in-out bg-gray-900 rounded-xl hover:shadow-lg hover:bg-sky-600 hover:text-white"
+                                >Reaserve a Seat</a
+                            >
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                </div>
+                </div>
+            </section>
+
+            <!-- Gallery -->
+            <section id="pic" class="h-full py-6 bg-white dark:bg-gray-800 sm:py-8 lg:py-12 lg:px-16">
+                <div class="px-4 mx-auto max-w-screen-2xl md:px-8" >
+                   
+                       
+                        <div id="title"  class="mb-20 text-center ">
+                            <!-- <h1 class="text-4xl font-bold text-white">Here are our trains.</h1> -->
+                            <p  class="text-6xl tracking-wider text-gray-500 text-light dark:text-white">
+                                Gallery
+                        </div>
+                        
+                    
+            
+                    <div  class="grid grid-cols-2 gap-4 md:grid-cols-6 md:gap-6 ">
+                        <!-- image - start -->
+                        <a
+                            class="relative flex items-end h-[500px] overflow-hidden bg-gray-100 rounded-lg shadow-lg group md:h-[600px] col-span-2 md:col-span-3 ">
+                            <img src="../assets/index.html/gallery/8.jpg" loading="lazy" alt="Colombo Fort" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
+            
+                            <div
+                                class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
+                            </div>
+            
+                            <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Colombo Fort</span>
+                        </a>
+                        <!-- image - end -->
+            
+                        <!-- image - start -->
+                       <div class="col-span-2 md:col-span-3">
+                        <div class="grid grid-rows-2 gap-6">
+                        <a 
+                            class="relative flex items-end h-48 col-span-2 overflow-hidden bg-gray-100 rounded-lg shadow-lg group md:h-[288px]">
+                            <img src="../assets/index.html/gallery/4.jpg" loading="lazy" alt="Mount Lavinia" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
+            
+                            <div
+                                class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
+                            </div>
+            
+                            <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Mount Lavinia</span>
+                        </a>
+                        <a 
+                            class="relative flex items-end h-48 overflow-hidden bg-gray-100 rounded-lg shadow-lg group md:col-span-2 md:h-[288px] col-span-2">
+                            <img src="../assets/index.html/gallery/10.png" loading="lazy" alt="Nine-Arch Bridge" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
+            
+                            <div
+                                class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
+                            </div>
+            
+                            <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Nine-Arch Bridge</span>
+                        </a>
+                        </div>
+                       </div>
+                        <!-- image - end -->
+            
+                        <!-- image - start -->
+                        <a 
+                            class="relative flex items-end overflow-hidden bg-gray-100 rounded-lg shadow-lg group h-[600px] col-span-2">
+                            <img src="../assets/index.html/gallery/1.jpg" loading="lazy" alt="Haputhale" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
+            
+                            <div
+                                class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
+                            </div>
+            
+                            <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Haputhale</span>
+                        </a>
+                        <!-- image - end -->
+                         
+                        <!-- image - start -->
+                        <a 
+                            class="relative flex items-end overflow-hidden bg-gray-100 rounded-lg shadow-lg group h-[600px] col-span-2">
+                            <img src="../assets/index.html/gallery/3.jpg" loading="lazy" alt="Batticaloa" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
+            
+                            <div
+                                class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
+                            </div>
+            
+                            <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Batticaloa</span>
+                        </a>
+                        <!-- image - end -->
+                         
+                        <!-- image - start -->
+                        <a 
+                            class="relative flex items-end overflow-hidden bg-gray-100 rounded-lg shadow-lg group h-[600px] col-span-2">
+                            <img src="../assets/index.html/gallery/7.jpg" loading="lazy" alt="Thalawa kale" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
+            
+                            <div
+                                class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
+                            </div>
+            
+                            <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Thalawa kale</span>
+                        </a>
+                        <!-- image - end -->
+                         
+                         
+                        <!-- image - start -->
+                        <a 
+                            class="relative flex items-end h-48 col-span-2 overflow-hidden bg-gray-100 rounded-lg shadow-lg group md:h-80 md:col-span-3">
+                            <img src="../assets/index.html/gallery/13.jpg" loading="lazy" alt="Peradeniya" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
+            
+                            <div
+                                class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
+                            </div>
+            
+                            <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Peradeniya</span>
+                        </a>
+                        <!-- image - end -->
+                        <!-- image - start -->
+                        <a 
+                            class="relative flex items-end h-48 col-span-2 overflow-hidden bg-gray-100 rounded-lg shadow-lg group md:h-80 md:col-span-3">
+                            <img src="../assets/index.html/gallery/11.png" loading="lazy" alt="Nine-Arch Bridge" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
+            
+                            <div
+                                class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
+                            </div>
+            
+                            <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Nine-Arch Bridge</span>
+                        </a>
+                        <!-- image - end -->
+            
+                    </div>
+                </div>
+            </section>
+
+            
+        </main>
+        
+        <div id="footer-container"></div>
+    </div>
+       
+    <script src="../src/scripts/main.js"></script>
+    <script src="../src/scripts/carousal.js"></script>
+</body>
+
+</html>

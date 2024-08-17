@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="../src/templates/sidenavbar.js"></script>
+    <script src="../src/templates/header.js"></script>
+    <script src="../src/templates/footer.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <style>
+        .dark-mode {
+            background-color: #000000d9;
+            color: #a0aec0;
+        }
+        .toggle-checkbox:checked {
+            right: 0;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #3a9af4;
+        }
+        .toggle-checkbox {
+            right: .9rem;
+            transition: all 0.15s ease-in-out;
+        }
+        .toggle-label {
+            transition: background-color 0.15s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- side bar menu -->
+    <div id="sidenav-container"></div>
+    
+    <div class="lg:ml-[70px] flex-col mt-[50px] bg-gray-300 dark:bg-black">    
+        <div id="header-container"></div>
+        
+        <main class="w-auto rounded-lg " >
+            <h1 class="pt-16 text-4xl font-bold text-center dark:text-white sm:text-6xl"> Contact Us</h1>
+            
+             <div class="px-12 py-20 mx-auto sm:px-24 md:px-36 lg:px-56 xl:px-80 dark:text-white">
+                <h1 class="mt-8 text-3xl">Get in Touch</h1>
+                <form class="mt-4 ">
+                    <label for="name" class="block">Name</label>
+                    <input type="text" id="name" class="block w-full p-2 mt-2 mb-4 border border-gray-300 rounded-lg dark:bg-slate-900 dark:border-black">
+        
+                    <label for="email" class="block">Email</label>
+                    <input type="email" id="email" class="block w-full p-2 mt-2 mb-4 border border-gray-300 rounded-lg dark:bg-slate-900 dark:border-black">
+                    <!-- <label for="mobile" class="block">Mobile</label>
+                    <small class="text-red-500">Enter a valid 10-digit phone number.</small>
+                    <input type="tel" id="mobile" class="block w-full p-2 mt-2 mb-4 border border-gray-300 rounded-lg" pattern="[0-9]{10}" required> -->
+        
+                    <label for="subject" class="block">Subject</label>
+                    <!-- <input type="text" id="subject" class="block w-full p-2 mt-2 mb-4 border border-gray-300 rounded-lg"> -->
+                    <select id="subject" class="block w-full p-2 mt-2 mb-4 border border-gray-300 rounded-lg dark:bg-slate-900 dark:border-black">
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Technical Support">Technical Support</option>
+                        <option value="Sales">Payment Issue</option>
+                        <option value="Feedback">Feedback</option>
+                    </select>
+                    <label for="message" class="block">Message</label>
+                    <textarea id="message" class="block w-full p-2 mt-2 mb-4 border border-gray-300 rounded-lg dark:bg-slate-900 dark:border-black" rows="4"></textarea>
+        
+                    <button type="submit" class="px-5 py-2 text-white rounded-full bg-sky-700 hover:bg-blue-600">Submit</button>
+                </form>
+            </div>
+        
+            <script>
+                document.getElementById('darkModeToggle').addEventListener('change', function() {
+                    document.body.classList.toggle('dark-mode');
+                });
+            </script>
+
+             
+            <!-- quick form -->
+        </main>
+        
+        <div id="footer-container"></div>
+    </div>
+       
+    <script src="../src/scripts/main.js"></script>
+</body>
+
+</html>

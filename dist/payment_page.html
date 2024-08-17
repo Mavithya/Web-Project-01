@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+      .form-select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 0.5rem center;
+        background-size: 1.5em 1.5em;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .card-container {
+        perspective: 1000px;
+        width: 400px;
+        height: 300px;
+      }
+      .card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 1.4s;
+        cursor: progress;
+      }
+      .card-front,
+      .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .card-front {
+        z-index: 2;
+      }
+      .card-back {
+        transform: rotateY(180deg);
+        z-index: 1;
+      }
+      .card-container:hover .card {
+        transform: rotateY(180deg);
+      }
+      .card.show-back {
+        transform: rotateY(180deg);
+      }
+      #steb-bar2 {
+            display: block;
+            width: 98vw;
+            height: 100%;
+            border: none;
+            overflow: hidden;
+        }
+    </style>
+  </head>
+  <body
+    class=""
+    style="background-image: url(/assests/teastate.jpeg); background-repeat: no-repeat; background-size: cover; opacity: .9;background-position-x: 50%;"
+  >
+
+  <iframe id="steb-bar2" src="stepbar2.html" class="lg:ml-2.5 ml-1 -mb-28"></iframe>
+  
+    <div class="m-4 sm:mx-10 md:m-20 lg:mx-32 xl:mx-64 xl:mt-8">
+      <div class="w-full mx-auto  shadow-lg sm:w-auto rounded-xl bg-gray-300">
+        <header class="flex flex-col items-center justify-center">
+          <div class="card-container">
+            <div class="card">
+              <div class="card-front">
+                <div class="relative">
+                  <img class="w-full h-auto" src="https://www.computop-paygate.com/Templates/imagesaboutYou_desktop/images/svg-cards/card-visa-front.png" alt="front credit card">
+                  <div class="absolute left-0 w-full px-12 text-lg text-white bg-transparent bottom-12">
+                    <p class="mb-5 number sm:text-lg" id="cardNumber">0000 0000 0000 0000</p>
+                    <div class="flex flex-row justify-between">
+                      <p id="cardholder">Card holder</p>
+                      <div class="">
+                        <span id="expiredMonth"></span>
+                        <span>/</span>
+                        <span id="expiredYear"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-back">
+                <div class="relative mt-4">
+                  <img class="w-full h-auto" src="https://www.computop-paygate.com/Templates/imagesaboutYou_desktop/images/svg-cards/card-visa-back.png" alt="back credit card">
+                  <div class="absolute right-0 w-1/3 px-12 text-lg text-white bg-transparent bottom-12">
+                    <p class="mb-5 number sm:text-xl" id="cardCVN">000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="flex">
+            <li class="mx-2">
+              <img class="w-16" src="https://www.computop-paygate.com/Templates/imagesaboutYou_desktop/images/computop.png" alt="" />
+            </li>
+            <li class="mx-2">
+              <img class="w-14" src="https://www.computop-paygate.com/Templates/imagesaboutYou_desktop/images/verified-by-visa.png" alt="" />
+            </li>
+            <li class="ml-5">
+              <img class="w-7" src="https://www.computop-paygate.com/Templates/imagesaboutYou_desktop/images/mastercard-id-check.png" alt="" />
+            </li>
+          </ul>
+        </header>
+        <form class="px-12 mt-8 sm:px-16 md:px-20 lg:px-28 xl:px-32" id="paymentForm">
+          <h1 class="text-xl font-semibold text-center text-gray-700">Card payment</h1>
+          <div class="">
+            <div class="my-3">
+              <input
+                type="text"
+                class="block w-full px-5 py-2 text-gray-700 placeholder-gray-400 bg-white border rounded-lg shadow-lg focus:ring focus:outline-none"
+                placeholder="Card holder"
+                maxlength="50"
+                id="inputCardholder"
+                required
+              />
+            </div>
+            <div class="my-3">
+              <input
+                type="text"
+                class="block w-full px-5 py-2 text-gray-700 placeholder-gray-400 bg-white border rounded-lg shadow-lg focus:ring focus:outline-none"
+                placeholder="Card number"
+                id="inputCardNumber"
+                maxlength="19"
+                required
+              />
+              <span id="cardNumberError" style="display:none; color: red;">Please enter a valid card number.</span>
+            </div>
+            <div class="flex flex-col my-3">
+              <div class="mb-2">
+                <label for="" class="text-gray-700">Expired</label>
+              </div>
+              <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                <select
+                  name=""
+                  id="inputExpiredMonth"
+                  class="block w-full px-5 py-2 text-gray-700 placeholder-gray-400 bg-white border rounded-lg shadow-lg appearance-none form-select focus:ring focus:outline-none"
+                  required>
+                  <option value="" selected disabled>MM</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+                <select
+                  name=""
+                  id="inputExpiredYear"
+                  class="block w-full px-5 py-2 text-gray-700 placeholder-gray-400 bg-white border rounded-lg shadow-lg appearance-none form-select focus:ring focus:outline-none"
+                required>
+                  <option value="" selected disabled>YY</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+                  <option value="2029">2029</option>
+                  <option value="2030">2030</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="cvn" class=" form-label">CVN </label>
+              <input type="text" class="block px-5 py-2 mt-3 text-gray-700 placeholder-gray-400 bg-white border rounded-lg shadow-lg form-control focus:ring focus:outline-none" id="cvn" name="cvn" placeholder="Enter CVN" required maxlength="3">
+            </div>
+          </div>
+          <div class="my-3">
+            <h1 class="pt-6 text-lg font-semibold text-blue-700">Total Price :- Rs. <span id="price-display"></span>.00</h1> 
+        </form>
+        <footer class="pt-4 pb-16 mt-6 px-14 md:px-32">
+          <button
+            class="w-full px-4 py-3 text-xl font-semibold text-blue-900 transition-colors bg-blue-300 rounded-full submit-button focus:ring focus:outline-none"
+            id="submitButton"
+          >
+            Pay now
+          </button>
+        </footer>
+      </div>
+    </div>
+  
+    <script>
+      document.getElementById('inputCardholder').addEventListener('input', function (event) {
+        document.getElementById('cardholder').textContent = event.target.value;
+      });
+
+      document.getElementById('inputCardNumber').addEventListener('input', function (event) {
+        formatCardNumber(event.target);
+        document.getElementById('cardNumber').textContent = event.target.value;
+      });
+
+      document.getElementById('inputExpiredMonth').addEventListener('change', function (event) {
+        document.getElementById('expiredMonth').textContent = event.target.value;
+      });
+
+      document.getElementById('inputExpiredYear').addEventListener('change', function (event) {
+        document.getElementById('expiredYear').textContent = event.target.value;
+      });
+
+      document.getElementById('cvn').addEventListener('input', function (e) {
+        document.getElementById('cardCVN').textContent = e.target.value;
+      });
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var card = document.querySelector('.card');
+        var cvnInput = document.getElementById('cvn');
+
+        cvnInput.addEventListener('focus', function () {
+          card.classList.add('show-back');
+        });
+
+        cvnInput.addEventListener('blur', function () {
+          card.classList.remove('show-back');
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const cardNumberInput = document.getElementById('inputCardNumber');
+        const cardNumberError = document.getElementById('cardNumberError');
+
+        cardNumberInput.addEventListener('input', function () {
+          formatCardNumber(this);
+
+          if (this.value.replace(/\D/g, '').length === 16) {
+            cardNumberError.style.display = 'none';
+            this.style.border = '';
+          } else {
+            cardNumberError.style.display = 'block';
+            this.style.border = '1px solid red';
+          }
+        });
+      });
+
+      function formatCardNumber(input) {
+        let value = input.value.replace(/\D/g, '');
+        value = value.replace(/(\d{4})(?=\d)/g, '$1-');
+        input.value = value.substring(0, 19);
+      }
+     
+      let finalPrice = localStorage.getItem('final-price');
+      if (finalPrice) {
+        document.getElementById('price-display').innerText = finalPrice;
+      } else {
+        document.getElementById('price-display').innerText = 'Price not available';
+      }
+
+      document.getElementById('paymentForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        alert('Payment submitted. Thank you!');
+        setTimeout(function () {
+          window.location.href = '../dist/index.html';
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

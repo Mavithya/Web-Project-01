@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Class</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+
+
+    <style>
+        #three-cards {
+            display: block;
+            width: 100%;
+            border: none;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .hidden{
+            display: none;
+        }
+
+        #steb-bar {
+            display: block;
+            width: 98vw;
+            height: 100%;
+            border: none;
+            overflow: hidden;
+        }
+
+        .selected {
+            border: 5px solid rgb(11, 15, 226);
+            background-color: rgb(151, 173, 225);
+        }
+
+        @media (min-width: 1024px) {
+            .custom-height {
+                height: 110vh;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .custom-height {
+                height: 215vh;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <iframe id="steb-bar" src="stepbar.html" class="lg:ml-2.5 ml-1 -mb-28"></iframe>
+    <iframe id="three-cards" src="cards.html" frameborder="0" scrolling="no" class="custom-height"></iframe>
+
+    <div class="flex flex-wrap justify-center w-full min-h-screen mt-8">
+
+        <div class="pt-4 pb-6 pr-8 ml-6 rounded-t-2xl" style="background-color: whitesmoke;height: fit-content;">
+            <h2 class="text-2xl font-semibold ml-9">Seat Selection</h2>
+            <h6 class="ml-9">Select One Way Seat Class</h6>
+
+            <div class="flex flex-wrap gap-8 p-4 ml-6 rounded-md gap-y-6">
+                <div id="forward1"
+                    class="flex flex-col p-0 mt-3 bg-white cursor-pointer train-option h-36 rounded-xl w-60 hover:shadow-2xl"
+                    data-class="1st class">
+                    
+                    <div class="flex w-20 h-5 m-0 bg-green-400 rounded-bl-xl justify-evenly rounded-t-xl"
+                        style="align-self: flex-end;">
+                        <i class=' bx bxs-purchase-tag bx-tada' style="color:#ffffff ;margin-top: 3px; "></i>
+                        <span id="main_price1" class="" style="font-size: 13px;"></span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h6 class="mt-2 ml-1 font-semibold">Air Conditioned</h6>
+                        <p style="font-size: 18px;" class="ml-1 font-normal">Saloon</p>
+                        <img src="../assets/reservation/second-class.png" class="w-20" style="margin-top: -23%;margin-left: 65%;" alt="">
+                    </div>
+                    <div class="flex items-center justify-between w-full h-full p-3 bg-blue-600 rounded-b-xl">
+                        <h6 class="text-white text-start">Available</h6>
+                        <div class="flex items-center justify-center w-8 bg-black rounded-md h-7">
+                            <span class="text-white ">99</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="forward2"
+                    class="flex flex-col p-0 mt-3 bg-white cursor-pointer train-option rounded-xl h-36 w-60 hover:shadow-2xl"
+                    data-class="2nd class">
+                    
+                    <div class="flex w-20 h-5 m-0 bg-green-400 rounded-bl-xl justify-evenly rounded-t-xl"
+                        style="align-self: flex-end;">
+                        <i class=' bx bxs-purchase-tag bx-tada' style="color:#ffffff ;margin-top: 3px; "></i>
+                        <span id="main_price2" class="" style="font-size: 13px;"></span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h6 class="mt-2 ml-1 font-semibold">Second Class</h6>
+                        <p style="font-size: 18px;" class="ml-1 font-normal">Reserved Seats</p>
+                        <img src="../assets/reservation/Saloon.png" class="w-16" style="margin-top: -16%;margin-left: 65%;" alt="">
+                    </div>
+                    <div class="flex items-center justify-between w-full h-full p-3 bg-blue-600 rounded-b-xl">
+                        <h6 class="text-white text-start">Available</h6>
+                        <div class="flex items-center justify-center w-8 bg-black rounded-md h-7">
+                            <span class="text-white ">99</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="forward3"
+                    class="flex flex-col p-0 mt-3 bg-white cursor-pointer train-option rounded-xl h-36 w-60 hover:shadow-2xl"
+                    data-class="3rd class">
+                    
+                    <div class="flex w-20 h-5 m-0 bg-green-400 rounded-bl-xl justify-evenly rounded-t-xl"
+                        style="align-self: flex-end;">
+                        <i class=' bx bxs-purchase-tag bx-tada' style="color:#ffffff ;margin-top: 3px; "></i>
+                        <span id="main_price3" class="" style="font-size: 13px;"></span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h6 class="mt-2 ml-1 font-semibold">Third Class </h6>
+                        <p style="font-size: 18px;" class="ml-1 font-normal">Reserved Seats</p>
+                        <img src="../assets/reservation/seats-train3.webp" class="w-20" style="margin-top: -23%;margin-left: 65%;" alt="">
+                    </div>
+                    <div class="flex items-center justify-between w-full h-full p-3 bg-blue-600 rounded-b-xl">
+                        <h6 class="text-white text-start">Available</h6>
+                        <div class="flex items-center justify-center w-8 bg-black rounded-md h-7">
+                            <span class="text-white ">99</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="ret_seat_box" class="hidden pt-2 pb-6 pr-8 m-0 ml-6 rounded-b-2xl"
+            style="background-color: whitesmoke;height: fit-content;border-top:solid rgba(0, 0, 0, 0.089) 2px;">
+            <h2 class="text-2xl font-semibold ml-9">Seat Selection</h2>
+            <h6 class="ml-9">Select Return Way Seat Class</h6>
+
+            <div class="flex flex-wrap gap-8 p-4 ml-6 rounded-md gap-y-6">
+                <div id="return1"
+                    class="flex flex-col p-0 mt-3 bg-white cursor-pointer train-option h-36 rounded-xl w-60 hover:shadow-2xl"
+                    data-class="1st class">
+                    
+                    <div class="flex w-20 h-5 m-0 bg-green-400 rounded-bl-xl justify-evenly rounded-t-xl"
+                        style="align-self: flex-end;">
+                        <i class=' bx bxs-purchase-tag bx-tada' style="color:#ffffff ;margin-top: 3px; "></i>
+                        <span id="return_price1" class="" style="font-size: 13px;"></span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h6 class="mt-2 ml-1 font-semibold">Air Conditioned</h6>
+                        <p style="font-size: 18px;" class="ml-1 font-normal">Saloon</p>
+                        <img src="../assets/reservation/second-class.png" class="w-20" style="margin-top: -23%;margin-left: 65%;" alt="">
+                    </div>
+                    <div class="flex items-center justify-between w-full h-full p-3 bg-blue-600 rounded-b-xl">
+                        <h6 class="text-white text-start">Available</h6>
+                        <div class="flex items-center justify-center w-8 bg-black rounded-md h-7">
+                            <span class="text-white ">99</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="return2"
+                    class="flex flex-col p-0 mt-3 bg-white cursor-pointer train-option rounded-xl h-36 w-60 hover:shadow-2xl"
+                    data-class="2nd class">
+                    
+                    <div class="flex w-20 h-5 m-0 bg-green-400 rounded-bl-xl justify-evenly rounded-t-xl"
+                        style="align-self: flex-end;">
+                        <i class=' bx bxs-purchase-tag bx-tada' style="color:#ffffff ;margin-top: 3px; "></i>
+                        <span id="return_price2" class="" style="font-size: 13px;"></span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h6 class="mt-2 ml-1 font-semibold">Second Class</h6>
+                        <p style="font-size: 18px;" class="ml-1 font-normal">Reserved Seats</p>
+                        <img src="../assets/reservation/Saloon.png" class="w-16" style="margin-top: -16%;margin-left: 65%;" alt="">
+                    </div>
+                    <div class="flex items-center justify-between w-full h-full p-3 bg-blue-600 rounded-b-xl">
+                        <h6 class="text-white text-start">Available</h6>
+                        <div class="flex items-center justify-center w-8 bg-black rounded-md h-7">
+                            <span class="text-white ">99</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="return3"
+                    class="flex flex-col p-0 mt-3 bg-white cursor-pointer train-option rounded-xl h-36 w-60 hover:shadow-2xl"
+                    data-class="3rd class">
+                    
+                    <div class="flex w-20 h-5 m-0 bg-green-400 rounded-bl-xl justify-evenly rounded-t-xl"
+                        style="align-self: flex-end;">
+                        <i class=' bx bxs-purchase-tag bx-tada' style="color:#ffffff ;margin-top: 3px; "></i>
+                        <span id="return_price3" class="" style="font-size: 13px;"></span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h6 class="mt-2 ml-1 font-semibold">Third Class </h6>
+                        <p style="font-size: 18px;" class="ml-1 font-normal">Reserved Seats</p>
+                        <img src="../assets/reservation/seats-train3.webp" class="w-20" style="margin-top: -23%;margin-left: 65%;" alt="">
+                    </div>
+                    <div class="flex items-center justify-between w-full h-full p-3 bg-blue-600 rounded-b-xl">
+                        <h6 class="text-white text-start">Available</h6>
+                        <div class="flex items-center justify-center w-8 bg-black rounded-md h-7">
+                            <span class="text-white ">99</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div
+            class="flex-wrap items-center justify-center block w-full px-4 pt-4 pb-10 mx-auto mt-16 bg-gray-100 lg:px-12 lg:w-11/12">
+            <p class="mb-6 text-2xl tracking-widest text-center">Summary</p>
+            <div class="flex flex-col justify-center gap-8 lg:flex-row gap-y-14">
+                
+                <div class="flex flex-col w-full p-0 bg-white rounded-xl hover:shadow-2xl lg:w-auto">
+                    <h2 class="self-center p-1.5 text-xl">Forward Train</h2>
+                    <div class="flex justify-between gap-10 px-6 border-t-2 border-gray-200">
+                        <div class="flex flex-col mt-4">
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Train No. and Name:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Departure date:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Start Station:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Departure time:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Your destination:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Destination time:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">No. of Passengers:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Train Class:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Price (per person):</span>
+                        </div>
+                        <div class="flex flex-col mt-4">
+                            <span id="main_trainNo" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="main_departureDate" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="main_yourStation" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="main_departureTime" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="main_yourDestination" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="main_destinationTime" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="main_noOfPassengers" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="main_trainClass" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="main_Price" class="mt-auto text-xs font-semibold text-left"></span>
+
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between h-full mt-4 bg-black rounded-b-xl">
+                        <i class='ml-3 text-3xl text-white bx bxs-right-arrow-square bx-none'></i>
+                        <p class="mr-3 text-white">Total Price:- LKR <span id="forward-total">0.00</span> </p>
+                    </div>
+                </div>
+
+                <div id="ret_summary" class="flex flex-col hidden w-full p-0 bg-white rounded-xl hover:shadow-2xl lg:w-auto">
+                    <h2 class="self-center text-xl p-1.5 tracking-wide">Return Train</h2>
+                    <div class="flex justify-between gap-10 px-6 border-t-2 border-gray-200">
+                        <div class="flex flex-col mt-4">
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Train No. and Name:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Departure date:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Start Station:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Departure time:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Your destination:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Destination time:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">No. of Passengers:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Train Class:</span>
+                            <span class="self-start mt-1 ml-2 text-xs font-semibold">Price (per person):</span>
+                        </div>
+                        <div class="flex flex-col mt-4">
+                            <span id="return_trainNo" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="return_departureDate" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="return_yourStation" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="return_departureTime" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="return_yourDestination" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="return_destinationTime" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="return_noOfPassengers" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="return_trainClass" class="mt-auto text-xs font-semibold text-left"></span>
+                            <span id="return_Price" class="mt-auto text-xs font-semibold text-left"></span>
+                        </div>
+                    </div>
+                        
+                    <div class="flex items-center justify-between h-full mt-4 bg-black rounded-b-xl">
+                        <i class='ml-3 text-3xl text-white bx bxs-right-arrow-square bx-none'></i>
+                        <p class="mr-3 text-white">Total Price:- LKR <span id="return-total"></span> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const spans = document.querySelectorAll('#main_trainNo, #main_departureDate, #main_yourStation, #main_departureTime, #main_yourDestination, #main_destinationTime, #main_noOfPassengers, #return_trainNo, #return_departureDate, #return_yourStation, #return_departureTime, #return_yourDestination, #return_destinationTime, #return_noOfPassengers');
+
+                spans.forEach(span => {
+                    if (!span.innerHTML.trim()) {
+                        span.innerHTML = '-';
+                    }
+                });
+            });
+        </script>
+
+
+
+
+    </div>
+    <div class="flex items-center justify-between h-16 bg-gray-200 "
+        style="border-top:solid rgba(4, 12, 250, 0.804) 1px ;">
+        <p class="ml-5 font-semibold text-black">Total Price :- LKR <span id="gross-total">0.00</span></p>
+        <div class="p-3 border-l-2 border-gray-400 hover:shadow-2xl "><button onclick="navigateToNewPage()"
+                class="w-24 text-white bg-blue-600 hover:bg-white hover:text-black h-9 rounded-xl hover:border-black">ChekOut</button>
+        </div>
+    </div>
+
+    <script>
+        
+        document.getElementById('main_trainNo').textContent = localStorage.getItem('main_trainNo');
+        document.getElementById('main_departureDate').textContent = localStorage.getItem('departureDate');
+        document.getElementById('main_yourStation').textContent = localStorage.getItem('main_yourStation');
+        document.getElementById('main_departureTime').textContent = localStorage.getItem('main_departureTime');
+        document.getElementById('main_yourDestination').textContent = localStorage.getItem('main_yourDestination');
+        document.getElementById('main_destinationTime').textContent = localStorage.getItem('main_destinationTime');
+        document.getElementById('main_noOfPassengers').textContent = localStorage.getItem('numPassengers');
+        document.getElementById('main_price1').textContent = localStorage.getItem('main_price1');
+        document.getElementById('main_price2').textContent = localStorage.getItem('main_price2');
+        document.getElementById('main_price3').textContent = localStorage.getItem('main_price3');
+    </script>
+    <script>
+        
+        document.getElementById('return_trainNo').textContent = localStorage.getItem('return_trainNo');
+        document.getElementById('return_departureDate').textContent = localStorage.getItem('returnDate');
+        document.getElementById('return_yourStation').textContent = localStorage.getItem('return_yourStation');
+        document.getElementById('return_departureTime').textContent = localStorage.getItem('return_departureTime');
+        document.getElementById('return_yourDestination').textContent = localStorage.getItem('return_yourDestination');
+        document.getElementById('return_destinationTime').textContent = localStorage.getItem('return_destinationTime');
+        document.getElementById('return_noOfPassengers').textContent = localStorage.getItem('numPassengers');
+        document.getElementById('return_price1').textContent = localStorage.getItem('return_price1');
+        document.getElementById('return_price2').textContent = localStorage.getItem('return_price2');
+        document.getElementById('return_price3').textContent = localStorage.getItem('return_price3');
+    </script>
+    
+    <script>       
+        
+        const trainOptions = document.querySelectorAll('.train-option');
+
+        trainOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const trainClass = option.dataset.class; 
+                const forwardTrainClassSpan = document.getElementById('main_trainClass');
+                const returnTrainClassSpan = document.getElementById('return_trainClass');
+                
+
+                if (option.id.startsWith('forward')) {
+                    forwardTrainClassSpan.textContent = trainClass;
+                    localStorage.setItem('ftc',trainClass);
+                } else if (option.id.startsWith('return')) {
+                    returnTrainClassSpan.textContent = trainClass;
+                    localStorage.setItem('rtc',trainClass);
+                }
+
+                
+                trainOptions.forEach(otherOption => {
+                    if (otherOption !== option && otherOption.id.startsWith(option.id.split('-')[0])) {
+                        
+                        const otherTrainClassSpan = otherOption.id.startsWith('forward') ? forwardTrainClassSpan : returnTrainClassSpan;
+                        otherTrainClassSpan.textContent = '-';
+                    }
+                });
+                
+            });
+        });
+
+        
+        const forwardOptions = document.querySelectorAll('[id^="forward"]');
+        const returnOptions = document.querySelectorAll('[id^="return"]');
+
+        
+        const handleSelection = (options) => {
+            options.forEach(option => {
+                option.addEventListener('click', () => {
+                    
+                    options.forEach(opt => opt.classList.remove('selected'));
+
+                    
+                    option.classList.add('selected');
+                });
+            });
+        };
+
+        
+        handleSelection(forwardOptions);
+        handleSelection(returnOptions);
+
+        
+
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const updateTotal = (totalSpanId, passengersSpanId, priceSpanId) => {
+                const passengersSpan = document.getElementById(passengersSpanId);
+                const priceSpan = document.getElementById(priceSpanId);
+                const totalSpan = document.getElementById(totalSpanId);
+
+                if (passengersSpan && priceSpan && totalSpan) {
+                    const passengers = parseInt(passengersSpan.textContent.trim(), 10);
+                    const price = parseFloat(priceSpan.textContent.trim().replace(/[^\d,-]/g, ''));
+                    const total = passengers * price;
+                    totalSpan.textContent = total.toFixed(2); 
+
+                    updateGrossTotal();
+                }
+            };
+
+            const retBox = document.getElementById('ret_seat_box');
+            const retSummary = document.getElementById('ret_summary');
+            const ret_seat_selection = localStorage.getItem('retSelected');
+            if (ret_seat_selection === 'true'){
+            retBox.classList.remove('hidden');
+            retSummary.classList.remove('hidden');
+            }
+
+            const updateGrossTotal = () => {
+                const forwardTotalSpan = document.getElementById('forward-total');
+                const returnTotalSpan = document.getElementById('return-total');
+                const grossTotalSpan = document.getElementById('gross-total');
+
+                if (forwardTotalSpan && returnTotalSpan && grossTotalSpan) {
+                    const forwardTotal = parseFloat(forwardTotalSpan.textContent.trim()) || 0;
+                    const returnTotal = parseFloat(returnTotalSpan.textContent.trim()) || 0;
+                    const grossTotal = forwardTotal + returnTotal;
+                    console.log(grossTotal);
+                    localStorage.setItem('final-price',grossTotal);
+                    localStorage.setItem('forward_price',forwardTotal);
+                    localStorage.setItem('return_price',returnTotal);
+
+                    grossTotalSpan.textContent = grossTotal.toFixed(2); 
+                }
+            };
+
+            
+            const handleForwardSelection = (option, priceSpanId) => {
+                option.addEventListener('click', () => {
+                    const mainPriceDiv = document.getElementById('main_Price');
+                    const priceSpan = document.getElementById(priceSpanId);
+
+                    if (priceSpan) {
+                        mainPriceDiv.textContent = priceSpan.textContent.trim();
+                        updateTotal('forward-total', 'main_noOfPassengers', priceSpanId);
+                    }
+                });
+            };
+
+            
+            const handleReturnSelection = (option, returnPriceId, priceSpanId) => {
+                option.addEventListener('click', () => {
+                    const returnPriceDiv = document.getElementById(returnPriceId);
+                    const priceSpan = document.getElementById(priceSpanId);
+
+                    if (returnPriceDiv && priceSpan) {
+                        returnPriceDiv.textContent = priceSpan.textContent.trim();
+                        updateTotal('return-total', 'return_noOfPassengers', priceSpanId);
+                    }
+                });
+            };
+
+            
+            const forward1 = document.getElementById('forward1');
+            const forward2 = document.getElementById('forward2');
+            const forward3 = document.getElementById('forward3');
+
+            
+            if (forward1) {
+                handleForwardSelection(forward1, 'main_price1');
+            }
+
+            if (forward2) {
+                handleForwardSelection(forward2, 'main_price2');
+            }
+
+            if (forward3) {
+                handleForwardSelection(forward3, 'main_price3');
+            }
+
+            
+            const return1 = document.getElementById('return1');
+            const return2 = document.getElementById('return2');
+            const return3 = document.getElementById('return3');
+
+            
+            if (return1) {
+                handleReturnSelection(return1, 'return_Price', 'return_price1');
+            }
+
+            if (return2) {
+                handleReturnSelection(return2, 'return_Price', 'return_price2');
+            }
+
+            if (return3) {
+                handleReturnSelection(return3, 'return_Price', 'return_price3');
+            }
+
+            
+            updateGrossTotal();
+
+        });
+
+
+        function navigateToNewPage() {
+            
+            window.location.href = "payment_page.html";
+        }  
+
+
+    </script>
+
+</body>
+
+</html>

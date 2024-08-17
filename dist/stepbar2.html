@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<style>
+    #progress-bar{
+        width: 97%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+</style>
+
+</head>
+
+<body>
+    <div id="progress-bar">
+        <h2 class="sr-only">Steps</h2>
+
+        <div
+            class="relative after:absolute after:inset-x-0 after:top-1/2 after:block after:h-0.5 after:-translate-y-1/2 after:rounded-lg after:bg-gray-700">
+            <ol class="relative z-10 flex justify-between text-sm font-medium text-green-600">
+                <li class="flex items-center gap-2 bg-white p-2">
+                    <span
+                        class="cursor-pointer size-6 rounded-full bg-green-600 text-center lg:text-[18px]/6 text-lg font-bold text-white">1</span>
+
+                    <span class=" cursor-pointer hidden sm:block"> HOME </span>
+                </li>
+
+                <li class="flex items-center gap-2 bg-white p-2">
+                    <span
+                        class="size-6 rounded-full bg-green-600 text-center lg:text-[18px]/6 text-lg font-bold text-white">
+                        2
+                    </span>
+
+                    <span class="hidden sm:block text-green-600"> CHECK AVAILABILITY </span>
+                </li>
+
+                <li class="flex items-center gap-2 bg-white p-2">
+                    <span
+                        class="size-6 rounded-full bg-green-600 text-center lg:text-[18px]/6 text-lg font-bold text-white">
+                        3
+                    </span>
+
+                    <span class="hidden sm:block text-green-600">CONFIRMATION</span>
+                </li>
+
+                <li class="flex items-center gap-2 bg-white p-2">
+                    <span
+                        class="size-6 rounded-full bg-blue-600 text-center lg:text-[18px]/6 text-lg font-bold text-white">
+                        4
+                    </span>
+
+                    <span class="hidden sm:block text-blue-600">PAYMENT</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>

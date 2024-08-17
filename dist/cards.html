@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+    <style>
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 250px; 
+            overflow: hidden;
+            border-top-left-radius: .5rem;
+            border-top-right-radius: .5rem;
+        }
+
+        .carousel-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+        }
+
+        p{
+            margin-bottom: -25px;
+            
+        }
+        
+        .carousel-image.active {
+            opacity: 1;
+        }
+
+        @media (min-width: 1024px) {
+            .flex-wrap {
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .w-full {
+                max-width: 100%;
+            }
+            .flex-wrap {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="relative pt-16 bg-blueGray-50">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap items-stretch justify-center">
+                
+                <div class="w-full px-4 mb-6 md:w-6/12 lg:w-4/12 lg:mb-0">
+                    <div class="relative flex flex-col w-full min-w-0 mb-6 break-words bg-white bg-pink-500 rounded-lg shadow-lg card">
+                        <div class="carousel">
+                            <img src="../assets/reservation/IMG_7887.JPG" class="carousel-image">
+                            <img src="../assets/reservation/first new.jpg" class="carousel-image">
+                            <img src="../assets/reservation/Train-2.jpg" class="carousel-image">
+                        </div>
+                        <div class="relative p-8 mb-4 card-body">
+                            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+                                class="absolute left-0 block w-full h-95-px -top-94-px">
+                                <polygon points="-30,95 583,95 583,65" class="text-pink-500 fill-current"></polygon>
+                            </svg>
+                            <h4 class="text-xl font-bold text-center text-white">
+                                1st Class Air Conditioned Saloon
+                            </h4>
+                            <p class="mt-2 font-light text-white text-md">
+                                Luxury awaits in our 1st Class Air Conditioned Saloon. Enjoy air-conditioned
+                                 comfort with adjustable cushion seats, foldable armrests, and footrests. Features 
+                                 include tray tables, bottle holders, a few shared TVs, and charging
+                                  ports for a premium travel experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full px-4 mb-6 md:w-6/12 lg:w-4/12 lg:mb-0">
+                    <div class="relative flex flex-col w-full min-w-0 mb-6 break-words bg-white bg-pink-500 rounded-lg shadow-lg card">
+                        <div class="carousel">
+                            <img src="../assets/reservation/second 1.jpeg" class="carousel-image">
+                            <img src="../assets/reservation/second 2.jpg" class="carousel-image">
+                        </div>
+                        <div class="relative p-8 mb-4 card-body">
+                            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+                                class="absolute left-0 block w-full h-95-px -top-94-px">
+                                <polygon points="-30,95 583,95 583,65" class="text-pink-500 fill-current"></polygon>
+                            </svg>
+                            <h4 class="text-xl font-bold text-center text-white">
+                                2nd Class Reserved Seats
+                            </h4>
+                            <p class="mt-2 font-light text-white text-md">
+                                Comfortable leather seats with foldable armrests and tray tables await you in our 
+                                2nd Class. Enjoy the view through windows that can be opened for fresh air, all at a reasonable price. It's the perfect choice for those seeking comfort and affordability.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full px-4 mb-6 md:w-6/12 lg:w-4/12 lg:mb-0">
+                    <div class="relative flex flex-col w-full min-w-0 mb-6 break-words bg-white bg-pink-500 rounded-lg shadow-lg card">
+                        <div class="carousel">
+                            <img src="../assets/reservation/third 1.jpeg" class="carousel-image">
+                            <img src="../assets/reservation/snapedit_1718948136891.jpg" class="carousel-image">
+                            
+                        </div>
+                        <div class="relative p-8 mb-4 card-body">
+                            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+                                class="absolute left-0 block w-full h-95-px -top-94-px">
+                                <polygon points="-30,95 583,95 583,65" class="text-pink-500 fill-current"></polygon>
+                            </svg>
+                            <h4 class="text-xl font-bold text-center text-white">
+                                3rd Class Reserved Seats
+                            </h4>
+                            <p class="mt-2 font-light text-white text-md">
+                                Affordable and practical, our 3rd Class offers basic seating with
+                                 a shared table for groups and openable windows for a refreshing journey. 
+                                Perfect for budget-conscious travelers seeking essential comfort and convenience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentIndex = 0;
+            const carousels = document.querySelectorAll('.carousel');
+            
+            carousels.forEach(carousel => {
+                const images = carousel.querySelectorAll('.carousel-image');
+                const totalImages = images.length;
+        
+                function showNextImage() {
+                    images[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % totalImages;
+                    images[currentIndex].classList.add('active');
+                }
+        
+                
+                images[currentIndex].classList.add('active');
+        
+                
+                setInterval(showNextImage, 3200);
+            });
+        });
+    </script>
+</body>
+</html>

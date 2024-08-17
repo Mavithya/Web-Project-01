@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sidebar {
+    @apply transition-all duration-300 ease-in flex-col top-0 left-0 h-[100%] w-[17rem]  bg-gray-100 dark:bg-black;
+}
+
+.sidebar.collapesed { 
+    @apply !w-[70px] max-lg:hidden;
+}
+
+.sidebar.collapesed .logo {
+    @apply hidden transition-all duration-300; 
+}
+
+.sidebar.collapesed .toggleBtn {
+    @apply transition-all duration-300;
+}
+.sidebar.collapesed .hamburgerIcon {
+    @apply flex ;
+}
+
+.sidebar.collapesed .crossIcon {
+    @apply hidden;
+}
+
+
+.nav-lists {
+    @apply list-none w-full h-[50px] my-[5px] leading-[50px] px-2.5;
+}
+
+.nav-lists a {
+    @apply flex text-[21px] text-slate-400 items-center rounded-lg transition duration-300 hover:bg-sky-400/20 hover:text-sky-700 
+            dark:text-slate-200 ;
+}
+
+.nav-lists a i {
+    @apply min-w-[50px] h-[50px] text-center leading-[50px] scale-150;
+}
+
+.sidebar.collapesed .nav-lists a span {
+    @apply hidden transition-opacity duration-300 ease-in-out;
+}
+
+.sidebar.collapesed .userCircleDiv {
+    @apply h-[50px];   
+}
+
+.sidebar.collapesed .userCircleDiv i {
+    @apply text-4xl ;   
+}
+
+.sidebar.collapesed .userCircleDiv h2{
+    @apply  hidden;   
+}
+
+.sidebar.collapesed .logoutIcon {
+    @apply flex justify-center items-center  w-[50px] h-[50px] rounded-lg  hover:bg-sky-400/20 hover:text-sky-700 text-slate-400 dark:text-white mx-2.5 ;  
+}
+
+.sidebar.collapesed .SignInIcon {
+    @apply justify-center items-center flex w-[50px] h-[50px] rounded-lg  hover:bg-sky-400/20 hover:text-sky-700 text-slate-400 dark:text-white mx-2.5 ;  
+}
+.sidebar.collapesed .logoutBtn {
+    @apply order-last hidden;
+}
+
+.sidebar.collapesed .light-dark-mode-text {
+    @apply hidden;
+}
+
+.sidebar.collapesed .darkButton {
+    @apply w-[40px] ;
+}
+
+
+/* ======Carousal Wallpapers====== */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+    min-width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+    
+    .carousel-content {
+        position: absolute;
+        /* width: 1000px; */
+        top: 40%;
+        left: 50%;
+        /* transform: translate(-50%, -50%); */
+  
+        color: white; 
+        /* padding: 40px;  */
+        border-radius: 5px; 
+        
+        /* max-width: 1000px; */
+        @apply translate-x-[-50%] translate-y-[-40%] bg-opacity-50 text-white p-[5vw] rounded-md bg-sky-200/20 backdrop-blur-[2px] w-[60vw] md:translate-y-[-50%];
+        
+    
+      }
+  
+   /* ______BUTTON______ */
+      .carousel-content button {
+        position: relative;
+        /* padding: 20px 50px; */
+        border: none;
+        /* border-radius: 45px; */
+        /* color: rgb(255, 255, 255); */
+        /* font-size: 23px; */
+        /* font-weight: 400; */
+        cursor: pointer;
+        transition: var(--tran-05);
+        box-shadow:  0 5px 10px rgba(0, 0, 0, 0.055);
+        @apply px-2 py-1 rounded-md bg-sky-700;
+      }
+      .carousel-content button:hover {
+        background-color: #f6f6f6de;
+        color: rgba(0, 0, 0, 0.813);
+      }
+.button:active{
+    transform: scale(1.05);
+}
+
+    

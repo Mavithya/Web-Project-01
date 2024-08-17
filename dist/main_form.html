@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+    .hide-heading thead {
+      display: none;
+    }
+
+    .tab-button:hover:not(.active) {
+      color: #2773ee;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .table-row {
+      transition: background-color 0.3s;
+    }
+
+    .table-row:hover {
+      background-color: #E5E7EB;
+    }
+
+    .selected-row {
+      background-color: #7dabe3 !important;
+    }
+
+    #schedule-container {
+      overflow-y: scroll;
+      max-height: 80vh;
+    }
+
+    #home{
+    margin-left: -46px;
+}
+
+i{
+    position: absolute;
+    margin-top: 0.8px;
+}
+
+#modify-btn{
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+#proceed-arrow{
+    margin-top: 4.8px;
+}
+.ui-autocomplete {
+    max-height: 200px; /* Set the maximum height */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    /* Optional: Additional styles for better visibility */
+    border: 1px solid #ccc;
+    /* background-color: #671010; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+    
+  
+  
+    
+  </style>
+
+</head>
+
+<body>
+  
+  
+  <div id="progress-bar" class="hidden">
+    <h2 class="sr-only">Steps</h2>
+      
+    <!-- <div
+      class="relative after:absolute after:inset-x-0 after:top-1/2 after:block after:h-0.5 after:-translate-y-1/2 after:rounded-lg after:bg-gray-700">
+      <ol class="relative z-10 flex justify-between text-sm font-medium text-green-600">
+        <li class="flex items-center gap-2 p-2 bg-white">
+          <span
+            class="cursor-pointer size-6 rounded-full bg-green-600 text-center lg:text-[18px]/6 text-lg font-bold text-white">1</span>
+
+          <span class="hidden cursor-pointer sm:block"> HOME </span>
+        </li>
+
+        <li class="flex items-center gap-2 p-2 bg-white">
+          <span class="size-6 rounded-full bg-blue-600 text-center lg:text-[18px]/6 text-lg font-bold text-white">
+            2
+          </span>
+
+          <span class="hidden text-blue-600 sm:block"> CHECK AVAILABILITY </span>
+        </li>
+
+        <li class="flex items-center gap-2 p-2 bg-white">
+          <span class="size-6 rounded-full bg-gray-500 text-center lg:text-[18px]/6 text-lg font-bold text-white">
+            3
+          </span>
+
+          <span class="hidden text-gray-500 sm:block">CONFIRMATION</span>
+        </li>
+
+        <li class="flex items-center gap-2 p-2 bg-white">
+          <span class="size-6 rounded-full bg-gray-500 text-center lg:text-[18px]/6 text-lg font-bold text-white"> 4
+          </span>
+
+          <span class="hidden text-gray-500 sm:block">PAYMENT</span>
+        </li>
+      </ol>
+    </div> -->
+    
+    <div
+    class="relative after:absolute after:inset-x-0 after:top-1/2 after:block after:h-0.5 after:-translate-y-1/2 after:rounded-lg after:bg-gray-700">
+    <ol class="relative z-10 flex justify-between text-base font-medium text-green-600">
+        <a href="index.html"><li class="flex items-center justify-center gap-2 p-2 bg-white">
+            <span
+                class="cursor-pointer size-8 rounded-full bg-green-600 text-center lg:text-[24px]/6 text-xl font-bold text-white  lg:pt-1">1</span>
+
+            <span class="hidden cursor-pointer md:block "> HOME </span>
+        </li>
+    </a>
+        <a href="cards.html"><li class="flex items-center gap-2 p-2 bg-white">
+            <span
+            class="cursor-pointer size-8 rounded-full bg-blue-600 text-center lg:text-[24px]/6 text-xl font-bold text-white  lg:pt-1">2</span>
+
+            <span class="hidden text-blue-600 md:block"> CHECK AVAILABILITY </span>
+        </li>
+    </a>
+        <li class="flex items-center gap-2 p-2 bg-white">
+            <span
+                class="size-8 rounded-full bg-gray-500 text-center lg:text-[24px]/6 text-xl font-bold text-white lg:pt-1">
+                3
+            </span>
+
+            <span class="hidden text-gray-500 md:block"> CONFIRMATION</span>
+        </li>
+        <li class="flex items-center gap-2 p-2 bg-white">
+            <span
+                class="size-8 rounded-full bg-gray-500 text-center lg:text-[24px]/6 text-xl font-bold text-white lg:pt-1">
+                4
+            </span>
+
+            <span class="hidden text-gray-500 md:block">PAYMENT</span>
+        </li>
+
+        <!-- <li class="flex items-center gap-2 p-2 bg-white">
+            <span
+                class="size-6 rounded-full bg-gray-500 text-center lg:text-[18px]/6 text-lg font-bold text-white">
+                5
+            </span>
+
+            <span class="hidden text-gray-500 sm:block"> TICKET SUMMARY </span>
+        </li> -->
+    </ol>
+</div>
+  </div>
+
+  <div id="modi-btn" class="flex justify-center hidden mt-10 lg:mt-24">
+    <button id="modify-btn" class="w-5/6 text-lg bg-gray-400 rounded-2xl lg:w-4/12 lg:pr-1">Modify the search<i
+        class='pl-3 text-xl bx bxs-up-arrow-circle lg:pl-2'></i></button>
+  </div>
+
+  <div class="flex items-center justify-center">
+    <div id="form-container" class="max-w-6xl p-10 mx-3 mt-40 rounded-md shadow-md bg-sky-700 dark:bg-gray-800">
+      <h1 class="text-4xl font-bold text-white capitalize dark:text-white">Book your seat</h1>
+      <form id="train-search-form">
+        <div class="grid grid-cols-12 gap-2 mt-4 ">
+          <div class="col-span-12 sm:col-span-5">
+            <label class="text-white dark:text-gray-200" for="from">From:</label>
+            <input id="start-station" type="text"
+              class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+              required>
+          </div>
+          
+          <div class="flex items-center justify-center col-span-12 py-3 sm:col-span-2 max-sm:rotate-90">
+            <i class='pt-4 text-2xl text-white cursor-pointer bx bx-transfer-alt bx-none dark:text-gray-200 hover:text-sky-300' 
+                onclick="swapStations()"></i>
+          <script>/* -----Swap Stations-----*/
+            function swapStations() {
+              var startStationInput = document.getElementById("start-station");
+              var endStationInput = document.getElementById("end-station");
+            
+              var temp = startStationInput.value;
+              startStationInput.value = endStationInput.value;
+              endStationInput.value = temp;
+            }
+           
+          </script>
+          </div>
+
+          <div class="col-span-12 sm:col-span-5">
+            <label class="text-white dark:text-gray-200" for="to">To:</label>
+            <input id="end-station" type="text"
+              class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+              required>
+          </div>
+
+          <div class="col-span-12 sm:col-span-5">
+            <label class="text-white dark:text-gray-200" for="departureDate">Departure Date</label>
+            <input id="start-date" type="date"
+              class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" required>
+          </div>
+<script>/* -----Date Update-----*/
+  function formatDate() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+    const day = String(today.getDate()).padStart(2, '0');
+    
+    return `${year}-${month}-${day}`;
+  }
+  
+  function setDate() {
+    const dateInput = document.getElementById('start-date');
+    dateInput.value = formatDate();
+  }
+  
+  window.onload = setDate;
+  </script>
+
+          <div class="col-span-12 sm:col-start-8 sm:col-span-5">
+            <label class="text-white dark:text-gray-200" for="numPassengers">No. of passengers</label>
+            <input id="no-of-passangers" type="number" value="1" min="1" max="10"
+              class="block w-full px-4 py-2 mt-3 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-sky-700 dark:focus:border-sky-700 focus:outline-none focus:ring" required>
+          </div>
+
+          <label class="inline-flex items-center col-span-12 mb-5 cursor-pointer sm:col-span-4 ">
+            <span class="pr-3 my-auto text-sm font-medium text-gray-900 dark:text-gray-300">Return trip</span>
+            <input id="return-trip" type="checkbox" class="sr-only peer">
+            <div
+              class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-sky-700 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-sky-700">
+            </div>
+          </label>
+
+          <div id="returnDateField" style="display: none;" class="col-span-12 sm:col-span-5 sm:col-start-8">
+            <label class="text-white dark:text-gray-200" for="returnDate">Return Date</label>
+            <input id="return-date" type="date"
+              class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-sky-700 dark:focus:border-sky-700 focus:outline-none focus:ring">
+          </div>
+        </div>
+
+        <div class="flex justify-end mt-6">
+          <button type="submit" id="main-btn"
+            class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform rounded-md bg-sky-700 hover:bg-sky-700 focus:outline-none focus:bg-gray-600">Search
+            trains</button>
+        </div>
+      </form>
+      <script>
+        document.getElementById('return-trip').addEventListener('change', function () {
+          var returnDateField = document.getElementById('returnDateField');
+          if (this.checked) {
+            returnDateField.style.display = 'block';
+          } else {
+            returnDateField.style.display = 'none';
+          }
+        });
+      </script>
+    </div>
+  </div>
+
+
+  <!-- --------------------------------next----------------------------- -->
+
+  <div id="train-info" class="grid hidden mx-4 mt-8 lg:grid-cols-2 lg:mx-1 lg:mt-4">
+    <div class="lg:pl-8 lg:pt-6">
+      <img src="../assets/reservation/Train logo.png" class="w-12 h-10 lg:w-16 lg:h-12">
+      <h1 class="absolute ml-16 -mt-8 text-xl lg:ml-20 lg:-mt-10">Train Info</h1>
+      <h1 class="py-5 text-2xl font-semibold text-center text-blue-600 lg:text-4xl lg:text-left lg:pt-4 lg:pb-3"><span
+          id="info-strat">Colombo Fort</span><span class="relative ml-3 mr-8 lg:mr-10 lg:ml-2"><i
+            class='pt-1 bx bxs-right-arrow-square'></i></span><span id="info-end">Trincomalee</span></h1>
+      <h1>Date: <span id="info-date">2024-06-26</span></h1>
+      <h1 id="proceed-msg" class="py-2">Select a train and proceed<span id="proceed-arrow" class="absolute"><i
+            class='bx bxs-right-arrow'></i></span></h1>
+    </div>
+    <div id="mobile-image" class="flex justify-center">
+      <img src="../assets/reservation/going.jpeg" class="h-48 ml-6 w-80 lg:ml-40" id="info-pic">
+    </div>
+  </div>
+
+  <div id="error-msg" class="hidden mx-auto text-lg font-semibold text-center text-red-500 my-14">
+    <h1>Sorry, there are no trains running between the stations you searched for.<br>Select other stations and search
+      again.</h1>
+  </div>
+
+  <div id="tab-container" class="hidden w-full mt-10 bg-white rounded-lg shadow-lg lg:mt-7">
+    <div class="flex justify-center border-b">
+      <button id="tab1" class="px-6 py-2 -mb-1 text-lg transition duration-300 tab-button focus:outline-none">Oneway
+        train</button>
+      <button id="tab2"
+        class="px-6 py-2 -mb-1 text-lg text-black transition duration-300 tab-button focus:outline-none">Return
+        train</button>
+    </div>
+    <div class="pt-6 bg-gray-200 border-blue-600 border-y-2">
+      <div class="overflow-x-auto md:overflow-x-visible">
+        <table id="main-table" class="min-w-full lg:table-auto">
+          <thead class="justify-between">
+            <tr class="bg-gray-800">
+              <th class="px-8 py-2 lg:px-2">
+                <span class="text-gray-300">TrainNo:/Name</span>
+              </th>
+              <th class="px-8 py-2 lg:px-2 min-w-48 lg:min-w-36">
+                <span class="text-gray-300">Your station</span>
+              </th>
+              <th class="px-2 py-2">
+                <span class="text-gray-300 min-w-44 lg:min-w-36">Departure time</span>
+              </th>
+              <th class="px-8 py-2 lg:px-2">
+                <span class="text-gray-300">Your destination</span>
+              </th>
+              <th class="px-8 py-2 lg:px-4 min-w-32 lg:min-w-28">
+                <span class="text-gray-300">Destination time</span>
+              </th>
+              <th class="px-6 py-2 lg:px-2">
+                <span class="text-gray-300">Frequency</span>
+              </th>
+              <th class="px-6 py-2 lg:px-2 min-w-44 lg:min-w-32">
+                <span class="text-gray-300">Train type</span>
+              </th>
+              <th class="px-8 py-2 lg:px-2 min-w-72 lg:min-w-64">
+                <span class="text-gray-300">Available classes</span>
+              </th>
+              <th class="px-8 py-2 lg:px-2">
+                <span class="text-gray-300">Price(Per seat)</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            
+
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="overflow-x-auto md:overflow-x-visible">
+        <table id="return-table" class="min-w-full lg:table-auto">
+          <thead class="justify-between">
+            <tr class="bg-gray-800">
+              <th class="px-8 py-2 lg:px-2">
+                <span class="text-gray-300">TrainNo:/Name</span>
+              </th>
+              <th class="px-8 py-2 lg:px-2 min-w-48 lg:min-w-36">
+                <span class="text-gray-300">Your station</span>
+              </th>
+              <th class="px-2 py-2">
+                <span class="text-gray-300 min-w-44 lg:min-w-36">Departure time</span>
+              </th>
+              <th class="px-8 py-2 lg:px-2">
+                <span class="text-gray-300">Your destination</span>
+              </th>
+              <th class="px-8 py-2 lg:px-4 min-w-32 lg:min-w-28">
+                <span class="text-gray-300">Destination time</span>
+              </th>
+              <th class="px-6 py-2 lg:px-2">
+                <span class="text-gray-300">Frequency</span>
+              </th>
+              <th class="px-6 py-2 lg:px-2 min-w-44 lg:min-w-32">
+                <span class="text-gray-300">Train type</span>
+              </th>
+              <th class="px-8 py-2 lg:px-2 min-w-72 lg:min-w-64">
+                <span class="text-gray-300">Available classes</span>
+              </th>
+              <th class="px-8 py-2 lg:px-2">
+                <span class="text-gray-300">Price(Per seat)</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div class="text-right">
+    <button id="final-proceed-btn"
+      class="hidden p-2 my-4 mr-4 text-lg rounded-md bg-sky-500 hover:bg-sky-700 ">Proceed</button>
+  </div>
+
+  <div id="overlay-container"
+    class="fixed inset-0 z-50 flex items-center justify-center hidden min-h-screen bg-gray-800 bg-opacity-75 ">
+    <div class="w-full p-6 bg-white rounded-lg shadow-lg lg:w-1/2">
+      <button id="close-overlay"
+        class="px-4 py-2 mb-4 text-white bg-red-500 rounded hover:bg-red-600 focus:outline-none">Close</button>
+      <div id="schedule-container" class="text-center">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="../src/scripts/mainscript.js"></script>
+  <script src="../src/scripts/eventhandlers.js"></script>
+
+
+
+</body>
+
+</html>
